@@ -26,7 +26,7 @@ pays = st.radio(
     ["US", "Europe", "Japan"],
     captions = ["Etats Unis Ameriques", "Europe", "Japan"])
 
-if pays == 'US':
+if pays == "US":
     viz_correlation = sns.heatmap(df_cars[df_cars.continent.str.contains('US.')].corr(), 
     								center=0,
     								cmap = sns.color_palette("vlag", as_cmap=True)
@@ -43,7 +43,7 @@ if pays == 'US':
     
     plt.close()
     
-elif pays == 'Europe':
+elif pays == "Europe":
     viz_correlation = sns.heatmap(df_cars[df_cars.continent.str.contains('Europe.')].corr(), 
     								center=0,
     								cmap = sns.color_palette("vlag", as_cmap=True)
@@ -78,9 +78,9 @@ else:
     plt.close()
 
 
-    st.write('corelation negative entre ,mpg et cylinders, mpg et hp, mpg et cubicinches, mpg et cylinders')
+    #st.write('corelation negative entre ,mpg et cylinders, mpg et hp, mpg et cubicinches, mpg et cylinders')
 
-    st.write('correlation positive entre cubicinches et culindres, cylinders et weightlbs')
+    #st.write('correlation positive entre cubicinches et culindres, cylinders et weightlbs')
 
 #viz_correlation = sns.heatmap(df_cars[df_cars['continent']=='Japan.'].corr(), 
 #								center=0,

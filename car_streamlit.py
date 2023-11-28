@@ -27,7 +27,7 @@ pays = st.radio(
     captions = ["Etats Unis Ameriques", "Europe", "Japan"])
 
 if pays == "US":
-    viz_correlation = sns.heatmap(df_cars[df_cars.continent.str.contains("US")].corr(), 
+    viz_correlation = sns.heatmap(df_cars[df_cars.continent.str.contains("US")].drop('continent', axis = 1).corr(), 
     								center=0,
     								cmap = sns.color_palette("vlag", as_cmap=True)
     								)
@@ -36,7 +36,7 @@ if pays == "US":
 
     plt.close()
 
-    viz_correlation = sns.pairplot(df_cars[df_cars.continent.str.contains("US")]						
+    viz_correlation = sns.pairplot(df_cars[df_cars.continent.str.contains("US")].drop('continent', axis = 1)						
     								)
     								
     st.pyplot(viz_correlation.figure)
@@ -44,7 +44,7 @@ if pays == "US":
     plt.close()
     
 elif pays == "Europe":
-    viz_correlation = sns.heatmap(df_cars[df_cars.continent.str.contains("Europe")].corr(), 
+    viz_correlation = sns.heatmap(df_cars[df_cars.continent.str.contains("Europe")].drop('continent', axis = 1).corr(), 
     								center=0,
     								cmap = sns.color_palette("vlag", as_cmap=True)
     								)
@@ -53,14 +53,14 @@ elif pays == "Europe":
 
     plt.close()
 
-    viz_correlation = sns.pairplot(df_cars[df_cars.continent.str.contains("Europe")]						
+    viz_correlation = sns.pairplot(df_cars[df_cars.continent.str.contains("Europe")].drop('continent', axis = 1)						
     								)
     								
     st.pyplot(viz_correlation.figure)
     plt.close()
     
 else:
-    viz_correlation = sns.heatmap(df_cars[df_cars.continent.str.contains("Japan.")].corr(), 
+    viz_correlation = sns.heatmap(df_cars[df_cars.continent.str.contains("Japan.")].drop('continent', axis = 1).corr(), 
     								center=0,
     								cmap = sns.color_palette("vlag", as_cmap=True)
     								)
@@ -69,7 +69,7 @@ else:
 
     plt.close()
 
-    viz_correlation = sns.pairplot(df_cars[df_cars.continent.str.contains("Japan")]						
+    viz_correlation = sns.pairplot(df_cars[df_cars.continent.str.contains("Japan")].drop('continent', axis = 1)						
     								)
     								
     st.pyplot(viz_correlation.figure)
